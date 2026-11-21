@@ -46,15 +46,30 @@ const Condiciones: React.FC = () => {
         <p>Con una única compra contratas dos cosas:</p>
         <ul className="list-disc pl-5 space-y-1.5">
           <li>
-            <strong className="text-gray-900">El bolígrafo Vera</strong>, un dispositivo físico que
-            pasa a ser de tu propiedad.
+            <strong className="text-gray-900">El bolígrafo Vera y 2 cuadernos Vera</strong>. El
+            bolígrafo es un dispositivo físico que pasa a ser de tu propiedad.
           </li>
           <li>
-            <strong className="text-gray-900">La suscripción al servicio Vera</strong>: el tutor
-            educativo por voz que funciona con el bolígrafo a través de la aplicación de Vera,
-            mientras la suscripción esté activa.
+            <strong className="text-gray-900">La suscripción al servicio Vera</strong>, que mientras
+            esté activa incluye:
+            <ul className="list-[circle] pl-5 mt-1.5 space-y-1">
+              <li>
+                el tutor educativo por voz que funciona con el bolígrafo a través de la aplicación
+                de Vera, sin límite de uso;
+              </li>
+              <li>hasta 1 cuaderno Vera al mes, si lo pides;</li>
+              <li>hasta 1 recambio de tinta al mes, si lo pides.</li>
+            </ul>
           </li>
         </ul>
+        <p>
+          Los cuadernos y recambios se piden escribiendo a{' '}
+          <a href="mailto:info@weshearn.com" className={linkClass}>
+            info@weshearn.com
+          </a>
+          . Los meses en que no los pidas no se acumulan. En lugar de los cuadernos, puedes imprimir
+          el papel de Vera en casa con una impresora láser; te enviamos el archivo si lo pides.
+        </p>
         <p>
           Para usar Vera necesitas un móvil o tableta compatible con la aplicación de Vera, con
           Bluetooth y conexión a internet.
@@ -115,7 +130,7 @@ const Condiciones: React.FC = () => {
         <ul className="list-disc pl-5 space-y-1.5">
           <li>
             La primera cuota mensual se cobra cuando activas el bolígrafo en la aplicación de Vera,
-            no el día de la compra. Si pasados 30 días desde la compra no lo has activado, la
+            no el día de la compra. Si pasados 15 días desde la compra no lo has activado, la
             suscripción empieza igualmente ese día.
           </li>
           <li>
@@ -147,9 +162,11 @@ const Condiciones: React.FC = () => {
 
       <LegalSection title="8. Envío y entrega">
         <p>
-          Enviamos el bolígrafo a direcciones de España. Lo entregamos lo antes posible y, en todo
-          caso, en un plazo máximo de 30 días naturales desde la compra. Si no podemos cumplir ese
-          plazo te avisaremos y podrás cancelar el pedido con reembolso íntegro.
+          Enviamos a direcciones de España, por correo y sin gastos de envío. El bolígrafo y los
+          cuadernos de la compra los entregamos lo antes posible y, en todo caso, en un plazo
+          máximo de 30 días naturales desde la compra. Si no podemos cumplir ese plazo te avisaremos
+          y podrás cancelar el pedido con reembolso íntegro. Los cuadernos y recambios de la
+          suscripción los enviamos cuando los pidas.
         </p>
       </LegalSection>
 
@@ -259,7 +276,7 @@ const Condiciones: React.FC = () => {
           </p>
           <p>
             Por la presente le comunico que desisto de mi contrato de venta del siguiente bien y de
-            prestación del siguiente servicio: bolígrafo Vera y suscripción al servicio Vera.
+            prestación del siguiente servicio: bolígrafo Vera con 2 cuadernos y suscripción al servicio Vera.
           </p>
           <p>Pedido el / recibido el: ____________________</p>
           <p>Nombre del consumidor: ____________________</p>

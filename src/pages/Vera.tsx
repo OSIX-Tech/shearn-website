@@ -10,6 +10,7 @@ import {
   Plus,
   ShieldCheck,
   RotateCcw,
+  CheckCircle2,
   MapPin,
   GraduationCap,
   Presentation,
@@ -363,9 +364,9 @@ const Vera: React.FC = () => {
             </div>
             <div className="space-y-3">
               <Faq q="¿Necesita conexión a internet?" a="Sí, una conexión wifi básica o un punto de acceso del móvil del adulto. El procesamiento pesado va a servidor; el alumno no necesita pantalla en ningún momento." />
-              <Faq q="¿Funciona con cualquier papel?" a="Necesita un papel propio con micrograbados que Vera usa para situar la escritura con precisión. Es muy barato y va incluido en la suscripción de Vera, así que no tienes que comprarlo aparte." />
+              <Faq q="¿Funciona con cualquier papel?" a="Necesita un papel propio con micrograbados que Vera usa para situar la escritura con precisión. Con la compra vienen 2 cuadernos y la suscripción incluye 1 cuaderno al mes, que te enviamos por correo cuando lo pidas. Si lo prefieres, también puedes imprimir el papel en casa con una impresora láser: te enviamos el archivo." />
               <Faq q="¿Qué pasa con los datos del alumno?" a="El contenido manuscrito y las conversaciones quedan asociadas a la cuenta del centro o tutor. Cumplimos RGPD y LOPDGDD. No se usan datos del alumno para entrenar modelos generales." />
-              <Faq q="¿Cuándo empiezo a pagar la suscripción?" a="Al comprar solo pagas el bolígrafo (89 €). La suscripción de 30 €/mes empieza cuando activas el bolígrafo y, como tarde, a los 30 días de la compra. No hay permanencia: la cancelas cuando quieras." />
+              <Faq q="¿Cuándo empiezo a pagar la suscripción?" a="Al comprar solo pagas el bolígrafo (89 €). La suscripción de 30 €/mes empieza cuando activas el bolígrafo y, como tarde, a los 15 días de la compra. No hay permanencia: la cancelas cuando quieras." />
               <Faq q="¿Cuándo lo recibo?" a="Lo enviamos a cualquier dirección de España sin gastos de envío. El plazo máximo de entrega es de 30 días desde la compra. Tienes 14 días para devolverlo si no te convence." />
             </div>
           </div>
@@ -378,8 +379,8 @@ const Vera: React.FC = () => {
               Consigue Vera.
             </h2>
             <p className="text-lg text-gray-500 max-w-2xl mx-auto leading-relaxed mb-10">
-              Compra el bolígrafo y te lo enviamos a casa. Empiezas a pagar la suscripción cuando
-              lo activas.
+              Te enviamos el bolígrafo y los cuadernos a casa. Empiezas a pagar la suscripción
+              cuando activas el bolígrafo.
             </p>
 
             <p className="mb-2">
@@ -387,9 +388,27 @@ const Vera: React.FC = () => {
               <span className="text-sm text-gray-500"> IVA incluido</span>
               <span className="block text-gray-500 mt-1">+ suscripción de 30 €/mes</span>
             </p>
-            <ul className="mb-10 space-y-1 text-sm text-gray-600">
-              {BUY_CONDITIONS.map((c) => <li key={c}>{c}</li>)}
-            </ul>
+
+            <div className="grid sm:grid-cols-2 gap-4 text-left my-10">
+              {INCLUDED.map((block) => (
+                <div key={block.title} className="rounded-2xl border border-gray-200 bg-white/70 p-6">
+                  <h3 className="font-semibold text-gray-900">{block.title}</h3>
+                  <p className="text-sm text-gray-500 mb-4">{block.price}</p>
+                  <ul className="space-y-2 text-sm text-gray-600">
+                    {block.items.map((item) => (
+                      <li key={item} className="flex gap-2">
+                        <CheckCircle2 className="w-4 h-4 mt-0.5 shrink-0 text-[#5fd91f]" />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+            <p className="mb-10 text-sm text-gray-600">
+              Hoy pagas solo el bolígrafo. La suscripción empieza cuando lo activas y, como tarde, a
+              los 15 días de la compra. Sin permanencia.
+            </p>
 
             <a
               href={BUY_URL}
@@ -495,10 +514,23 @@ const Faq: React.FC<{ q: string; a: string }> = ({ q, a }) => (
   </details>
 );
 
-const BUY_CONDITIONS = [
-  'Hoy pagas solo el bolígrafo.',
-  'La suscripción empieza al activarlo (como tarde, a los 30 días).',
-  'Sin permanencia. Envío gratis a toda España.',
+const INCLUDED = [
+  {
+    title: 'Con la compra',
+    price: '89 €, pago único',
+    items: ['Bolígrafo Vera', '2 cuadernos Vera', 'Envío gratis a toda España'],
+  },
+  {
+    title: 'Con la suscripción',
+    price: '30 €/mes, sin permanencia',
+    items: [
+      'Tutor Vera sin límite de uso',
+      '1 cuaderno al mes, cuando lo pidas',
+      '1 recambio de tinta al mes, cuando lo pidas',
+      'O, si lo prefieres, imprime el papel en casa',
+      'Envíos por correo, sin coste',
+    ],
+  },
 ];
 
 export default Vera;
