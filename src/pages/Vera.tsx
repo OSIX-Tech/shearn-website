@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import {
   PenLine,
   ChevronRight,
@@ -8,7 +9,7 @@ import {
   MessagesSquare,
   Plus,
   ShieldCheck,
-  MailX,
+  RotateCcw,
   MapPin,
   GraduationCap,
   Presentation,
@@ -17,7 +18,7 @@ import {
 import { Button } from '../components/ui/Button';
 import SiteHeader from '../components/SiteHeader';
 import SiteFooter from '../components/SiteFooter';
-import WaitlistForm from '../components/WaitlistForm';
+import { BUY_URL } from '../lib/constants';
 import { useReveal } from '../hooks/useReveal';
 
 const Vera: React.FC = () => {
@@ -73,9 +74,9 @@ const Vera: React.FC = () => {
               </p>
 
               <div className="mt-10 flex flex-wrap items-center gap-4">
-                <a href="#waitlist">
+                <a href="#comprar">
                   <Button className="group bg-[#82ff00] text-black hover:bg-[#6ce600] px-8 py-4 text-lg rounded-full flex items-center transition-colors duration-200">
-                    Apuntarme
+                    Comprar Vera
                     <ChevronRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                   </Button>
                 </a>
@@ -88,7 +89,7 @@ const Vera: React.FC = () => {
 
               <p className="mt-6 text-sm text-gray-400 flex items-center gap-2">
                 <Lock className="w-3.5 h-3.5" />
-                Lista privada. Sin spam, te avisamos solo cuando podamos enviarte una unidad.
+                Pago seguro con Stripe. Sin permanencia: cancelas cuando quieras.
               </p>
             </div>
 
@@ -364,20 +365,21 @@ const Vera: React.FC = () => {
               <Faq q="¿Necesita conexión a internet?" a="Sí, una conexión wifi básica o un punto de acceso del móvil del adulto. El procesamiento pesado va a servidor; el alumno no necesita pantalla en ningún momento." />
               <Faq q="¿Funciona con cualquier papel?" a="Necesita un papel propio con micrograbados que Vera usa para situar la escritura con precisión. Es muy barato y va incluido en la suscripción de Vera, así que no tienes que comprarlo aparte." />
               <Faq q="¿Qué pasa con los datos del alumno?" a="El contenido manuscrito y las conversaciones quedan asociadas a la cuenta del centro o tutor. Cumplimos RGPD y LOPDGDD. No se usan datos del alumno para entrenar modelos generales." />
-              <Faq q="¿Cuándo estará disponible?" a="Primeras unidades para programas piloto a lo largo de 2026. La lista de espera es por orden de inscripción y tendrá prioridad para academias y centros." />
+              <Faq q="¿Cuándo empiezo a pagar la suscripción?" a="Al comprar solo pagas el bolígrafo (89 €). La suscripción de 30 €/mes empieza cuando activas el bolígrafo y, como tarde, a los 30 días de la compra. No hay permanencia: la cancelas cuando quieras." />
+              <Faq q="¿Cuándo lo recibo?" a="Lo enviamos a cualquier dirección de España sin gastos de envío. El plazo máximo de entrega es de 30 días desde la compra. Tienes 14 días para devolverlo si no te convence." />
             </div>
           </div>
         </section>
 
-        {/* ===== WAITLIST ===== */}
-        <section id="waitlist" className="section-alt py-20 md:py-28 reveal">
+        {/* ===== COMPRA ===== */}
+        <section id="comprar" className="section-alt py-20 md:py-28 reveal">
           <div className="max-w-3xl mx-auto px-6 md:px-12 text-center">
             <h2 className="font-display text-4xl md:text-5xl font-bold text-gray-900 leading-[1.05] tracking-tight mb-5">
-              Únete a la lista de espera.
+              Consigue Vera.
             </h2>
             <p className="text-lg text-gray-500 max-w-2xl mx-auto leading-relaxed mb-10">
-              Te avisamos en cuanto haya unidades disponibles. Sin spam, sin venta de datos: un
-              solo email cuando estemos listos.
+              Compra el bolígrafo y te lo enviamos a casa. Empiezas a pagar la suscripción cuando
+              lo activas.
             </p>
 
             <p className="mb-2">
@@ -386,17 +388,31 @@ const Vera: React.FC = () => {
               <span className="block text-gray-500 mt-1">+ suscripción de 30 €/mes</span>
             </p>
             <ul className="mb-10 space-y-1 text-sm text-gray-600">
-              {WAITLIST_CONDITIONS.map((c) => <li key={c}>{c}</li>)}
+              {BUY_CONDITIONS.map((c) => <li key={c}>{c}</li>)}
             </ul>
 
-            <WaitlistForm />
+            <a
+              href={BUY_URL}
+              className="group inline-flex items-center bg-[#82ff00] text-black hover:bg-[#6ce600] px-10 py-4 text-lg font-medium rounded-full transition-colors duration-200"
+            >
+              Comprar Vera
+              <ChevronRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+            </a>
+            <p className="mt-4 text-sm text-gray-500">
+              <Lock className="inline w-3.5 h-3.5 mr-1 -mt-0.5" />
+              Pago seguro con Stripe. Al comprar aceptas las{' '}
+              <Link to="/condiciones" className="underline underline-offset-2 hover:text-gray-900">
+                condiciones de venta
+              </Link>
+              .
+            </p>
 
             <div className="mt-10 flex flex-wrap items-center justify-center gap-x-8 gap-y-2 text-sm text-gray-400">
               <span className="inline-flex items-center gap-2">
                 <ShieldCheck className="w-4 h-4 text-[#82ff00]" /> RGPD-compliant
               </span>
               <span className="inline-flex items-center gap-2">
-                <MailX className="w-4 h-4 text-[#82ff00]" /> Cero correos comerciales
+                <RotateCcw className="w-4 h-4 text-[#82ff00]" /> 14 días de desistimiento
               </span>
               <span className="inline-flex items-center gap-2">
                 <MapPin className="w-4 h-4 text-[#82ff00]" /> Hecho en Galicia
@@ -479,10 +495,10 @@ const Faq: React.FC<{ q: string; a: string }> = ({ q, a }) => (
   </details>
 );
 
-const WAITLIST_CONDITIONS = [
-  'Apuntarte no te compromete a nada.',
-  'En cuanto esté disponible te escribimos: pagas y te lo enviamos.',
-  'Envío en una semana a toda España.',
+const BUY_CONDITIONS = [
+  'Hoy pagas solo el bolígrafo.',
+  'La suscripción empieza al activarlo (como tarde, a los 30 días).',
+  'Sin permanencia. Envío gratis a toda España.',
 ];
 
 export default Vera;
