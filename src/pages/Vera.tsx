@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import {
   PenLine,
   ChevronRight,
@@ -8,7 +9,9 @@ import {
   MessagesSquare,
   Plus,
   ShieldCheck,
-  MailX,
+  RotateCcw,
+  CheckCircle2,
+  Smartphone,
   MapPin,
   GraduationCap,
   Presentation,
@@ -17,7 +20,7 @@ import {
 import { Button } from '../components/ui/Button';
 import SiteHeader from '../components/SiteHeader';
 import SiteFooter from '../components/SiteFooter';
-import WaitlistForm from '../components/WaitlistForm';
+import { BUY_URL, PLAY_URL } from '../lib/constants';
 import { useReveal } from '../hooks/useReveal';
 
 const Vera: React.FC = () => {
@@ -36,7 +39,7 @@ const Vera: React.FC = () => {
           <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-center">
             <div className="lg:col-span-7 reveal">
               <p className="font-hand text-2xl text-[#5AA300] -rotate-2 inline-block mb-6 -ml-5 md:-ml-10">
-                Nuevo · Cierre privado de unidades · 2026
+                Nuevo · Ya a la venta
               </p>
 
               <h1 className="leading-[0.95]">
@@ -73,9 +76,9 @@ const Vera: React.FC = () => {
               </p>
 
               <div className="mt-10 flex flex-wrap items-center gap-4">
-                <a href="#waitlist">
+                <a href="#comprar">
                   <Button className="group bg-[#82ff00] text-black hover:bg-[#6ce600] px-8 py-4 text-lg rounded-full flex items-center transition-colors duration-200">
-                    Apuntarme
+                    Comprar Vera
                     <ChevronRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                   </Button>
                 </a>
@@ -88,7 +91,7 @@ const Vera: React.FC = () => {
 
               <p className="mt-6 text-sm text-gray-400 flex items-center gap-2">
                 <Lock className="w-3.5 h-3.5" />
-                Lista privada. Sin spam, te avisamos solo cuando podamos enviarte una unidad.
+                Pago seguro con Stripe. Sin permanencia: cancelas cuando quieras.
               </p>
             </div>
 
@@ -361,23 +364,25 @@ const Vera: React.FC = () => {
               </h2>
             </div>
             <div className="space-y-3">
+              <Faq q="¿Qué móvil necesito?" a="Un móvil o tableta Android con Bluetooth, donde instalas la app de Vera desde Google Play. La app para iPhone y iPad llegará próximamente." />
               <Faq q="¿Necesita conexión a internet?" a="Sí, una conexión wifi básica o un punto de acceso del móvil del adulto. El procesamiento pesado va a servidor; el alumno no necesita pantalla en ningún momento." />
-              <Faq q="¿Funciona con cualquier papel?" a="Necesita un papel propio con micrograbados que Vera usa para situar la escritura con precisión. Es muy barato y va incluido en la suscripción de Vera, así que no tienes que comprarlo aparte." />
+              <Faq q="¿Funciona con cualquier papel?" a="Necesita un papel propio con micrograbados que Vera usa para situar la escritura con precisión. Con la compra vienen 2 cuadernos y la suscripción incluye 1 cuaderno al mes, que te enviamos por correo cuando lo pidas. Si lo prefieres, también puedes imprimir el papel en casa con una impresora láser: te enviamos el archivo." />
               <Faq q="¿Qué pasa con los datos del alumno?" a="El contenido manuscrito y las conversaciones quedan asociadas a la cuenta del centro o tutor. Cumplimos RGPD y LOPDGDD. No se usan datos del alumno para entrenar modelos generales." />
-              <Faq q="¿Cuándo estará disponible?" a="Primeras unidades para programas piloto a lo largo de 2026. La lista de espera es por orden de inscripción y tendrá prioridad para academias y centros." />
+              <Faq q="¿Cuándo empiezo a pagar la suscripción?" a="Al comprar solo pagas el bolígrafo (89 €). La suscripción de 30 €/mes empieza cuando activas el bolígrafo y, como tarde, a los 15 días de la compra. No hay permanencia: la cancelas cuando quieras." />
+              <Faq q="¿Cuándo lo recibo?" a="Lo enviamos a cualquier dirección de España sin gastos de envío. El plazo máximo de entrega es de 30 días desde la compra. Tienes 14 días para devolverlo si no te convence." />
             </div>
           </div>
         </section>
 
-        {/* ===== WAITLIST ===== */}
-        <section id="waitlist" className="section-alt py-20 md:py-28 reveal">
+        {/* ===== COMPRA ===== */}
+        <section id="comprar" className="section-alt py-20 md:py-28 reveal">
           <div className="max-w-3xl mx-auto px-6 md:px-12 text-center">
             <h2 className="font-display text-4xl md:text-5xl font-bold text-gray-900 leading-[1.05] tracking-tight mb-5">
-              Únete a la lista de espera.
+              Consigue Vera.
             </h2>
             <p className="text-lg text-gray-500 max-w-2xl mx-auto leading-relaxed mb-10">
-              Te avisamos en cuanto haya unidades disponibles. Sin spam, sin venta de datos: un
-              solo email cuando estemos listos.
+              Te enviamos el bolígrafo y los cuadernos a casa. Empiezas a pagar la suscripción
+              cuando activas el bolígrafo.
             </p>
 
             <p className="mb-2">
@@ -385,18 +390,67 @@ const Vera: React.FC = () => {
               <span className="text-sm text-gray-500"> IVA incluido</span>
               <span className="block text-gray-500 mt-1">+ suscripción de 30 €/mes</span>
             </p>
-            <ul className="mb-10 space-y-1 text-sm text-gray-600">
-              {WAITLIST_CONDITIONS.map((c) => <li key={c}>{c}</li>)}
-            </ul>
 
-            <WaitlistForm />
+            <div className="grid sm:grid-cols-2 gap-4 text-left my-10">
+              {INCLUDED.map((block) => (
+                <div key={block.title} className="rounded-2xl border border-gray-200 bg-white/70 p-6">
+                  <h3 className="font-semibold text-gray-900">{block.title}</h3>
+                  <p className="text-sm text-gray-500 mb-4">{block.price}</p>
+                  <ul className="space-y-2 text-sm text-gray-600">
+                    {block.items.map((item) => (
+                      <li key={item} className="flex gap-2">
+                        <CheckCircle2 className="w-4 h-4 mt-0.5 shrink-0 text-[#5fd91f]" />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+            <p className="mb-10 text-sm text-gray-600">
+              Hoy pagas solo el bolígrafo. La suscripción empieza cuando lo activas y, como tarde, a
+              los 15 días de la compra. Sin permanencia.
+            </p>
+
+            <a
+              href={BUY_URL}
+              className="group inline-flex items-center bg-[#82ff00] text-black hover:bg-[#6ce600] px-10 py-4 text-lg font-medium rounded-full transition-colors duration-200"
+            >
+              Comprar Vera
+              <ChevronRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+            </a>
+            <p className="mt-4 text-sm text-gray-500">
+              <Lock className="inline w-3.5 h-3.5 mr-1 -mt-0.5" />
+              Pago seguro con Stripe. Al comprar aceptas las{' '}
+              <Link to="/condiciones" className="underline underline-offset-2 hover:text-gray-900">
+                condiciones de venta
+              </Link>
+              .
+            </p>
+
+            <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3 text-sm">
+              <span className="inline-flex items-center gap-2 text-gray-600">
+                <Smartphone className="w-4 h-4 text-[#5fd91f]" /> Funciona con la app de Vera:
+              </span>
+              <a
+                href={PLAY_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center rounded-full border border-gray-300 bg-white px-4 py-2 font-medium text-gray-900 hover:border-gray-900 transition-colors"
+              >
+                Android · Google Play
+              </a>
+              <span className="inline-flex items-center rounded-full border border-dashed border-gray-300 px-4 py-2 text-gray-400">
+                iPhone · Próximamente
+              </span>
+            </div>
 
             <div className="mt-10 flex flex-wrap items-center justify-center gap-x-8 gap-y-2 text-sm text-gray-400">
               <span className="inline-flex items-center gap-2">
                 <ShieldCheck className="w-4 h-4 text-[#82ff00]" /> RGPD-compliant
               </span>
               <span className="inline-flex items-center gap-2">
-                <MailX className="w-4 h-4 text-[#82ff00]" /> Cero correos comerciales
+                <RotateCcw className="w-4 h-4 text-[#82ff00]" /> 14 días de desistimiento
               </span>
               <span className="inline-flex items-center gap-2">
                 <MapPin className="w-4 h-4 text-[#82ff00]" /> Hecho en Galicia
@@ -479,10 +533,23 @@ const Faq: React.FC<{ q: string; a: string }> = ({ q, a }) => (
   </details>
 );
 
-const WAITLIST_CONDITIONS = [
-  'Apuntarte no te compromete a nada.',
-  'En cuanto esté disponible te escribimos: pagas y te lo enviamos.',
-  'Envío en una semana a toda España.',
+const INCLUDED = [
+  {
+    title: 'Con la compra',
+    price: '89 €, pago único',
+    items: ['Bolígrafo Vera', '2 cuadernos Vera', 'Envío gratis a toda España'],
+  },
+  {
+    title: 'Con la suscripción',
+    price: '30 €/mes, sin permanencia',
+    items: [
+      'Tutor Vera sin límite de uso',
+      '1 cuaderno al mes, cuando lo pidas',
+      '1 recambio de tinta al mes, cuando lo pidas',
+      'O, si lo prefieres, imprime el papel en casa',
+      'Envíos por correo, sin coste',
+    ],
+  },
 ];
 
 export default Vera;

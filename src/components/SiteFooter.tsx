@@ -38,6 +38,7 @@ const SiteFooter: React.FC<{ dark?: boolean }> = ({ dark }) => {
             <nav className="flex flex-col gap-2.5">
               <Link to="/aviso-legal" className={link}>Aviso legal</Link>
               <Link to="/privacidad" className={link}>Privacidad</Link>
+              <Link to="/condiciones" className={link}>Condiciones de venta</Link>
             </nav>
           </div>
 

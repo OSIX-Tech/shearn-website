@@ -420,10 +420,10 @@ const Home: React.FC = () => {
                 Escríbenos
               </a>
               <Link
-                to="/vera#waitlist"
+                to="/vera#comprar"
                 className="group inline-flex items-center border border-white/20 hover:border-[#82ff00]/60 text-gray-300 hover:text-white px-7 py-4 text-lg rounded-full transition-colors duration-200"
               >
-                Apúntate a Vera
+                Compra Vera
                 <ChevronRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </Link>
             </div>

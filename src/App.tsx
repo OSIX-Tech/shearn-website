@@ -4,6 +4,7 @@ import SocraticLanding from './pages/socratic/Landing';
 import Vera from './pages/Vera';
 import AvisoLegal from './pages/AvisoLegal';
 import Privacidad from './pages/Privacidad';
+import Condiciones from './pages/Condiciones';
 import ScrollToTop from './components/ScrollToTop';
 import CookieBanner from './components/CookieBanner';
 
@@ -17,6 +18,7 @@ function App() {
         <Route path="/vera" element={<Vera />} />
         <Route path="/aviso-legal" element={<AvisoLegal />} />
         <Route path="/privacidad" element={<Privacidad />} />
+        <Route path="/condiciones" element={<Condiciones />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
       <CookieBanner />
