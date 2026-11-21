@@ -37,7 +37,7 @@ const Vera: React.FC = () => {
           <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-center">
             <div className="lg:col-span-7 reveal">
               <p className="font-hand text-2xl text-[#5AA300] -rotate-2 inline-block mb-6 -ml-5 md:-ml-10">
-                Nuevo · Cierre privado de unidades · 2026
+                Nuevo · Ya a la venta
               </p>
 
               <h1 className="leading-[0.95]">

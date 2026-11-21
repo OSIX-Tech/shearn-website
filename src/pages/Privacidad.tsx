@@ -6,7 +6,7 @@ const Privacidad: React.FC = () => {
   return (
     <LegalLayout
       title="Política de privacidad"
-      updated="29 de mayo de 2026"
+      updated="21 de noviembre de 2026"
       intro={
         <p>
           En Shearn nos tomamos en serio la privacidad. Esta política explica qué datos personales
@@ -61,6 +61,12 @@ const Privacidad: React.FC = () => {
             familia).
           </li>
           <li>
+            <strong className="text-gray-900">Datos de compra y envío:</strong> dirección de
+            facturación y de envío, teléfono, productos comprados, estado de la suscripción y, si
+            eres empresa, NIF. Los datos de tu tarjeta los trata directamente Stripe; Shearn no los
+            ve ni los guarda.
+          </li>
+          <li>
             <strong className="text-gray-900">Datos de cuenta y autenticación:</strong> credenciales
             y datos asociados al inicio de sesión (incluido el acceso mediante terceros como Google,
             si lo utilizas).
@@ -87,6 +93,13 @@ const Privacidad: React.FC = () => {
             <strong className="text-gray-900">Procesar el contenido mediante inteligencia
             artificial</strong> para ofrecer respuestas, reconocimiento de escritura y análisis:
             ejecución del contrato y, cuando proceda, consentimiento.
+          </li>
+          <li>
+            <strong className="text-gray-900">Gestionar compras, envíos, la suscripción y la
+            facturación</strong> de Vera: ejecución del contrato y cumplimiento de obligaciones
+            legales (fiscales y contables). Para ello comunicamos los datos necesarios a Stripe
+            Payments Europe, Ltd. (Irlanda), que procesa el pago, y a la empresa de transporte que
+            entrega el pedido.
           </li>
           <li>
             <strong className="text-gray-900">Atender consultas y solicitudes</strong> recibidas a
@@ -129,6 +142,11 @@ const Privacidad: React.FC = () => {
           <li>
             <strong className="text-gray-900">Datos de cuenta y contenido de aprendizaje:</strong>{' '}
             mientras la cuenta esté activa y hasta 12 meses después de su cancelación.
+          </li>
+          <li>
+            <strong className="text-gray-900">Datos de compra y facturación:</strong> mientras dure
+            la suscripción y, después, durante los plazos que exige la normativa fiscal y mercantil
+            (hasta 6 años).
           </li>
           <li>
             <strong className="text-gray-900">Datos de la lista de espera y de contacto:</strong>{' '}
