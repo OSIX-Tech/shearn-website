@@ -115,7 +115,7 @@ const Condiciones: React.FC = () => {
         <ul className="list-disc pl-5 space-y-1.5">
           <li>
             La primera cuota mensual se cobra cuando activas el bolígrafo en la aplicación de Vera,
-            no el día de la compra. Si pasados 30 días desde la entrega no lo has activado, la
+            no el día de la compra. Si pasados 30 días desde la compra no lo has activado, la
             suscripción empieza igualmente ese día.
           </li>
           <li>
