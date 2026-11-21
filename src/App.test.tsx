@@ -1,7 +1,7 @@
 import { afterEach, expect, test } from 'vitest';
 import { cleanup, render, screen } from '@testing-library/react';
 import App from './App';
-import { BUY_URL } from './lib/constants';
+import { BUY_URL, PLAY_URL } from './lib/constants';
 
 afterEach(() => { cleanup(); window.history.pushState({}, '', '/'); });
 
@@ -22,4 +22,5 @@ test('vera shows the price and links to the Stripe checkout', () => {
   expect(screen.getByText('89 €')).toBeTruthy();
   const hrefs = screen.getAllByRole('link', { name: /comprar vera/i }).map((a) => a.getAttribute('href'));
   expect(hrefs).toContain(BUY_URL);
+  expect(screen.getByRole('link', { name: /google play/i }).getAttribute('href')).toBe(PLAY_URL);
 });

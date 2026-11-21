@@ -71,8 +71,9 @@ const Condiciones: React.FC = () => {
           el papel de Vera en casa con una impresora láser; te enviamos el archivo si lo pides.
         </p>
         <p>
-          Para usar Vera necesitas un móvil o tableta compatible con la aplicación de Vera, con
-          Bluetooth y conexión a internet.
+          Para usar Vera necesitas un móvil o tableta Android con Bluetooth y conexión a internet,
+          donde instalas la aplicación de Vera desde Google Play. La aplicación para iPhone y iPad
+          todavía no está disponible.
         </p>
       </LegalSection>
 

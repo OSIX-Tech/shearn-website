@@ -11,6 +11,7 @@ import {
   ShieldCheck,
   RotateCcw,
   CheckCircle2,
+  Smartphone,
   MapPin,
   GraduationCap,
   Presentation,
@@ -19,7 +20,7 @@ import {
 import { Button } from '../components/ui/Button';
 import SiteHeader from '../components/SiteHeader';
 import SiteFooter from '../components/SiteFooter';
-import { BUY_URL } from '../lib/constants';
+import { BUY_URL, PLAY_URL } from '../lib/constants';
 import { useReveal } from '../hooks/useReveal';
 
 const Vera: React.FC = () => {
@@ -363,6 +364,7 @@ const Vera: React.FC = () => {
               </h2>
             </div>
             <div className="space-y-3">
+              <Faq q="¿Qué móvil necesito?" a="Un móvil o tableta Android con Bluetooth, donde instalas la app de Vera desde Google Play. La app para iPhone y iPad llegará próximamente." />
               <Faq q="¿Necesita conexión a internet?" a="Sí, una conexión wifi básica o un punto de acceso del móvil del adulto. El procesamiento pesado va a servidor; el alumno no necesita pantalla en ningún momento." />
               <Faq q="¿Funciona con cualquier papel?" a="Necesita un papel propio con micrograbados que Vera usa para situar la escritura con precisión. Con la compra vienen 2 cuadernos y la suscripción incluye 1 cuaderno al mes, que te enviamos por correo cuando lo pidas. Si lo prefieres, también puedes imprimir el papel en casa con una impresora láser: te enviamos el archivo." />
               <Faq q="¿Qué pasa con los datos del alumno?" a="El contenido manuscrito y las conversaciones quedan asociadas a la cuenta del centro o tutor. Cumplimos RGPD y LOPDGDD. No se usan datos del alumno para entrenar modelos generales." />
@@ -425,6 +427,23 @@ const Vera: React.FC = () => {
               </Link>
               .
             </p>
+
+            <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3 text-sm">
+              <span className="inline-flex items-center gap-2 text-gray-600">
+                <Smartphone className="w-4 h-4 text-[#5fd91f]" /> Funciona con la app de Vera:
+              </span>
+              <a
+                href={PLAY_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center rounded-full border border-gray-300 bg-white px-4 py-2 font-medium text-gray-900 hover:border-gray-900 transition-colors"
+              >
+                Android · Google Play
+              </a>
+              <span className="inline-flex items-center rounded-full border border-dashed border-gray-300 px-4 py-2 text-gray-400">
+                iPhone · Próximamente
+              </span>
+            </div>
 
             <div className="mt-10 flex flex-wrap items-center justify-center gap-x-8 gap-y-2 text-sm text-gray-400">
               <span className="inline-flex items-center gap-2">
