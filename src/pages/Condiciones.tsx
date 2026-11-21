@@ -123,8 +123,12 @@ const Condiciones: React.FC = () => {
             que la canceles.
           </li>
           <li>
-            No hay permanencia. Puedes cancelar en cualquier momento desde el enlace de gestión de
-            la suscripción que recibes por correo o escribiendo a{' '}
+            No hay permanencia. Puedes cancelar en cualquier momento desde el{' '}
+            <a href="https://billing.stripe.com/p/login/bJe5kF0sl68w63R8Qc9AA00" className={linkClass}>
+              portal de cliente
+            </a>{' '}
+            (entras con el correo que usaste al comprar), desde el enlace que recibes en los correos
+            de la suscripción o escribiendo a{' '}
             <a href="mailto:info@weshearn.com" className={linkClass}>
               info@weshearn.com
             </a>
