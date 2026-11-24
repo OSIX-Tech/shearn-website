@@ -38,18 +38,6 @@ const SiteHeader: React.FC<{ dark?: boolean }> = ({ dark }) => {
           <NavLink to="/socratic" active={is_active('/socratic')} dark={dark}>Socratic</NavLink>
           <NavLink to="/vera" active={is_active('/vera')} dark={dark}>Vera</NavLink>
         </nav>
-
-        <button
-          type="button"
-          disabled
-          aria-disabled="true"
-          title="Disponible próximamente"
-          className={`inline-flex items-center justify-center border px-4 md:px-5 py-2 rounded-full text-sm cursor-not-allowed opacity-50 ${
-            dark ? 'border-white/20 text-gray-300' : 'border-gray-300 text-gray-700'
-          }`}
-        >
-          Iniciar sesión
-        </button>
       </div>
     </header>
   );

@@ -4,15 +4,11 @@ import {
   PenLine,
   ChevronRight,
   Lock,
-  EyeOff,
   Ear,
   MessagesSquare,
   Plus,
-  ShieldCheck,
-  RotateCcw,
   CheckCircle2,
   Smartphone,
-  MapPin,
   GraduationCap,
   Presentation,
   Building2,
@@ -38,10 +34,6 @@ const Vera: React.FC = () => {
         <section className="max-w-6xl mx-auto px-6 md:px-12 pt-24 md:pt-32 pb-20 md:pb-24">
           <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-center">
             <div className="lg:col-span-7 reveal">
-              <p className="font-hand text-2xl text-[#5AA300] -rotate-2 inline-block mb-6 -ml-5 md:-ml-10">
-                Nuevo · Ya a la venta
-              </p>
-
               <h1 className="leading-[0.95]">
                 <span className="block font-display text-6xl md:text-8xl lg:text-9xl font-bold gradient-text-lime tracking-tight">
                   Vera
@@ -88,11 +80,6 @@ const Vera: React.FC = () => {
                   </Button>
                 </a>
               </div>
-
-              <p className="mt-6 text-sm text-gray-400 flex items-center gap-2">
-                <Lock className="w-3.5 h-3.5" />
-                Pago seguro con Stripe. Sin permanencia: cancelas cuando quieras.
-              </p>
             </div>
 
             <div className="lg:col-span-5 relative reveal">
@@ -127,14 +114,6 @@ const Vera: React.FC = () => {
                   </div>
                 </div>
               </div>
-
-              <div className="hidden md:block absolute -top-5 -right-4 bg-white rounded-2xl shadow-lg border border-gray-200 px-4 py-3 max-w-[180px]">
-                <div className="text-[11px] uppercase tracking-wider text-gray-400 font-semibold mb-1">
-                  Sin distracciones
-                </div>
-                <div className="text-xl font-bold text-gray-900">0</div>
-                <div className="text-xs text-gray-400 mt-0.5">pantallas y notificaciones</div>
-              </div>
             </div>
           </div>
         </section>
@@ -144,24 +123,16 @@ const Vera: React.FC = () => {
           <div className="max-w-6xl mx-auto px-6 md:px-12">
             <div className="grid md:grid-cols-12 gap-10 items-center">
               <div className="md:col-span-7">
-                <div className="inline-flex items-center gap-2 bg-[#82ff00]/10 text-[#82ff00] rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-wider mb-5">
-                  <EyeOff className="w-3.5 h-3.5" />
-                  Sin pantalla
-                </div>
                 <h2 className="font-display text-4xl md:text-5xl font-bold text-white leading-[1.05] tracking-tight mb-6">
                   Aprender no debería competir con TikTok.
                 </h2>
-                <p className="text-lg text-gray-400 leading-relaxed max-w-2xl mb-5">
+                <p className="text-lg text-gray-400 leading-relaxed max-w-2xl">
                   Vera no tiene pantalla. No tiene scroll. No tiene likes. No tiene notificaciones.
                   No interrumpe la concentración del alumno, porque el alumno está mirando lo único
                   que importa:{' '}
                   <span className="font-semibold text-white">
                     su propio razonamiento sobre el papel.
                   </span>
-                </p>
-                <p className="text-base text-gray-500 leading-relaxed max-w-2xl">
-                  Cuando termina la sesión, no hay nada que reabrir, ningún feed que actualizar,
-                  ninguna dopamina pendiente. Solo lo aprendido, en la libreta de siempre.
                 </p>
               </div>
               <div className="md:col-span-5">
@@ -175,13 +146,6 @@ const Vera: React.FC = () => {
                   />
                 </div>
               </div>
-            </div>
-
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mt-10">
-              <Stat value="0" label="notificaciones" />
-              <Stat value="0" label="pantallas" />
-              <Stat value="∞" label="páginas posibles" />
-              <Stat value="1" accent label="conversación a la vez" />
             </div>
           </div>
         </section>
@@ -284,7 +248,7 @@ const Vera: React.FC = () => {
                 <ul className="space-y-3 text-gray-600">
                   {[
                     'Texto manuscrito y mecanografiado.',
-                    'Fórmulas matemáticas y químicas (LaTeX interno).',
+                    'Fórmulas matemáticas y químicas.',
                     'Diagramas, flechas, esquemas básicos.',
                     'Voz natural en castellano y gallego.',
                   ].map((t) => (
@@ -407,10 +371,6 @@ const Vera: React.FC = () => {
                 </div>
               ))}
             </div>
-            <p className="mb-10 text-sm text-gray-600">
-              Hoy pagas solo el bolígrafo. La suscripción empieza cuando lo activas y, como tarde, a
-              los 15 días de la compra. Sin permanencia.
-            </p>
 
             <a
               href={BUY_URL}
@@ -444,18 +404,6 @@ const Vera: React.FC = () => {
                 iPhone · Próximamente
               </span>
             </div>
-
-            <div className="mt-10 flex flex-wrap items-center justify-center gap-x-8 gap-y-2 text-sm text-gray-400">
-              <span className="inline-flex items-center gap-2">
-                <ShieldCheck className="w-4 h-4 text-[#82ff00]" /> RGPD-compliant
-              </span>
-              <span className="inline-flex items-center gap-2">
-                <RotateCcw className="w-4 h-4 text-[#82ff00]" /> 14 días de desistimiento
-              </span>
-              <span className="inline-flex items-center gap-2">
-                <MapPin className="w-4 h-4 text-[#82ff00]" /> Hecho en Galicia
-              </span>
-            </div>
           </div>
         </section>
       </main>
@@ -464,13 +412,6 @@ const Vera: React.FC = () => {
     </div>
   );
 };
-
-const Stat: React.FC<{ value: string; label: string; accent?: boolean }> = ({ value, label, accent }) => (
-  <div className="bg-white/5 border border-white/10 rounded-2xl p-4">
-    <div className={`text-3xl font-bold ${accent ? 'text-[#82ff00]' : 'text-white'}`}>{value}</div>
-    <div className="text-sm text-gray-500 mt-0.5">{label}</div>
-  </div>
-);
 
 const Step: React.FC<{
   num: string;
