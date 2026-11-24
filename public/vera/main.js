@@ -207,11 +207,21 @@ if (fill) {
   paint();
 }
 
-// Sin servidor: el formulario prepara un correo con los datos.
-const form = document.querySelector('.wait');
-form.addEventListener('submit', (ev) => {
-  ev.preventDefault();
-  const d = new FormData(form);
-  const body = `Nombre: ${d.get('nombre')}\nCorreo: ${d.get('correo')}\n\nQuiero apuntarme a la lista de espera de Vera.`;
-  location.href = `mailto:info@weshearn.com?subject=${encodeURIComponent('Lista de espera de Vera')}&body=${encodeURIComponent(body)}`;
-});
+// Aviso de cookies: el mismo texto y la misma clave que el resto de weshearn.com,
+// así lo que elijas aquí vale para toda la web (y al revés).
+const consent = (() => { try { return localStorage.getItem('cookie-consent'); } catch { return null; } })();
+if (consent === null) {
+  const box = document.createElement('div');
+  box.className = 'cookies';
+  box.setAttribute('role', 'dialog');
+  box.setAttribute('aria-label', 'Aviso de cookies');
+  box.innerHTML = '<p>Solo usamos almacenamiento técnico necesario para que la web funcione. No usamos cookies de analítica ni de publicidad.</p>'
+    + '<div><button class="btn btn-sm btn-light" value="rejected">Rechazar</button><button class="btn btn-sm" value="accepted">Aceptar</button></div>';
+  box.addEventListener('click', (ev) => {
+    const choice = ev.target.closest('button')?.value;
+    if (!choice) return;
+    try { localStorage.setItem('cookie-consent', choice); } catch { /* vuelve a salir en la próxima visita */ }
+    box.remove();
+  });
+  document.body.append(box);
+}
