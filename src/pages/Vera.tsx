@@ -184,7 +184,7 @@ const Vera: React.FC = () => {
                 num="02"
                 icon={<Ear className="w-5 h-5 text-[#82ff00]" />}
                 title="Vera lee y escucha"
-                body="OCR para lo que escribe y reconocimiento de voz para lo que dice en voz alta. Un modelo multimodal lo cruza todo y entiende dónde está el alumno."
+                body="Lo que escribe llega a la app de Vera en el móvil, que además le escucha cuando habla. Así sabe en qué punto del ejercicio está."
               >
                 <div className="rounded-xl h-28 bg-gray-50 border border-gray-200 p-3 flex flex-col justify-between">
                   <div className="flex items-center gap-2 text-xs text-gray-500">
