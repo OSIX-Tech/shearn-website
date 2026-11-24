@@ -36,7 +36,7 @@ const SiteHeader: React.FC<{ dark?: boolean }> = ({ dark }) => {
 
         <nav className="hidden md:flex items-center gap-1">
           <NavLink to="/socratic" active={is_active('/socratic')} dark={dark}>Socratic</NavLink>
-          <NavLink to="/vera" active={is_active('/vera')} dark={dark}>Vera</NavLink>
+          <NavLink to="/vera" active={false} dark={dark} reloadDocument>Vera</NavLink>
         </nav>
       </div>
     </header>
@@ -47,12 +47,14 @@ interface NavLinkProps {
   to: string;
   active: boolean;
   dark?: boolean;
+  reloadDocument?: boolean;
   children: React.ReactNode;
 }
 
-const NavLink: React.FC<NavLinkProps> = ({ to, active, dark, children }) => (
+const NavLink: React.FC<NavLinkProps> = ({ to, active, dark, reloadDocument, children }) => (
   <Link
     to={to}
+    reloadDocument={reloadDocument}
     className={`relative px-4 py-2 text-[15px] font-normal transition-colors duration-200 ${
       dark
         ? active ? 'text-white' : 'text-gray-400 hover:text-white'

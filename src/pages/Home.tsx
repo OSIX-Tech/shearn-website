@@ -333,6 +333,7 @@ const Home: React.FC = () => {
               {/* VERA */}
               <Link
                 to="/vera"
+                reloadDocument
                 className="group lg:col-span-5 block rounded-2xl border border-white/10 bg-[#0F1621]/50 backdrop-blur-sm p-8 md:p-10 transition-all duration-200 hover:border-[#82ff00]/30 hover:shadow-xl hover:shadow-[#82ff00]/10 reveal"
               >
                 <div className="relative h-48 md:h-64 mb-8 rounded-2xl overflow-hidden border border-white/10">
@@ -421,6 +422,7 @@ const Home: React.FC = () => {
               </a>
               <Link
                 to="/vera#comprar"
+                reloadDocument
                 className="group inline-flex items-center border border-white/20 hover:border-[#82ff00]/60 text-gray-300 hover:text-white px-7 py-4 text-lg rounded-full transition-colors duration-200"
               >
                 Compra Vera
