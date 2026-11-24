@@ -29,7 +29,7 @@ const SiteFooter: React.FC<{ dark?: boolean }> = ({ dark }) => {
             <h4 className={heading}>Productos</h4>
             <nav className="flex flex-col gap-2.5">
               <Link to="/socratic" className={link}>Socratic</Link>
-              <Link to="/vera" className={link}>Vera</Link>
+              <Link to="/vera" reloadDocument className={link}>Vera</Link>
             </nav>
           </div>
 

@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vera · Un profesor particular en tu bolígrafo</title>
+<meta name="description" content="Vera es un profesor particular en tu bolígrafo: escucha cómo razonas mientras escribes en papel y te pregunta hasta que lo entiendes. Sin pantalla.">
+<link rel="icon" href="/vera/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="modulepreload" href="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.min.js" crossorigin>
+<link rel="modulepreload" href="/vera/pen3d.js">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT,WONK@9..144,400..600,0..100,0..1&family=Inter+Tight:wght@400;500;600&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/vera/estilos.css">
+<link rel="stylesheet" href="/vera/pen3d.css">
+</head>
+<body>
+
+<header class="bar">
+  <a class="wordmark" href="#inicio">Vera</a>
+  <nav aria-label="Secciones">
+    <a href="#como">Cómo funciona</a>
+    <a href="#boli">El boli</a>
+    <a href="#dudas">Dudas</a>
+  </nav>
+  <a class="btn btn-sm" href="#lista">Apuntarme</a>
+</header>
+
+<main id="inicio">
+
+  <section class="hero" aria-labelledby="titulo">
+    <h1 id="titulo" class="rv">
+      <span>Un profesor particular</span>
+      <span>en tu <span class="mark">bolígrafo<svg viewBox="0 0 300 100" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path d="M3 18 C 70 11, 170 15, 297 8 L 299 88 C 200 95, 96 90, 1 96 Z"/></svg></span></span>
+    </h1>
+    <p class="hero-sub rv">Vera lee lo que escribes con tu bolígrafo y te ayuda a pensar por ti mismo hasta que lo entiendas.</p>
+    <div class="hero-actions rv">
+      <a class="btn" href="#lista">Apúntate a la lista</a>
+    </div>
+
+    <div class="pen-stage" aria-label="El bolígrafo Vera con una conversación de ejemplo">
+      <p class="bubble b-a"><b>Alumna</b>Creo que es un círculo…</p>
+      <div class="pen-3d" data-pen3d data-tilt="18" aria-hidden="true"></div>
+      <img class="pen" src="/vera/img/boli-m1.png" alt="Bolígrafo Vera, basado en el Neo smartpen M1+" width="115" height="899">
+      <p class="bubble b-v"><b><i class="dot"></i>Vera</b>¿Y dónde está su centro? Mira tu dibujo.</p>
+      <p class="bubble b-a2"><b>Alumna</b>En el origen. Radio 2.</p>
+      <div class="cam-note" aria-hidden="true">
+        <svg viewBox="0 0 170 100" focusable="false"><path class="cn-line" pathLength="1" d="M30 72 C 52 58, 70 34, 104 26 S 148 14, 162 6"/><path class="cn-head" pathLength="1" d="M146 4 L 163 5 L 156 20"/></svg>
+        <span>Cámara</span>
+      </div>
+      <p class="bubble b-v2"><b><i class="dot"></i>Vera</b>¿Por qué 2 y no 4?</p>
+    </div>
+  </section>
+
+  <section class="quiet" aria-labelledby="t-quiet">
+    <h2 id="t-quiet" class="rv">No hay pantallas ni notificaciones. <span class="nowrap">Solo un bolígrafo que te habla.</span></h2>
+    <p class="rv">Escribes en la libreta. Vera te habla y te escucha, sin que tengas que mirar una sola pantalla.</p>
+    <figure class="wide rv">
+      <img src="/vera/img/vera-concentrated.jpg" alt="Alumna concentrada resolviendo ejercicios a mano con el bolígrafo Vera" width="1800" height="1350" loading="lazy">
+    </figure>
+    <ul class="nopes" aria-label="Lo que Vera no tiene">
+      <li class="rv" style="--k:0"><span>Pantallas<svg viewBox="0 0 300 40" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path pathLength="1" d="M2 26 C 70 18, 190 30, 298 16"/></svg></span></li>
+      <li class="rv" style="--k:1"><span>Notificaciones<svg viewBox="0 0 300 40" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path pathLength="1" d="M3 20 C 90 28, 210 14, 297 24"/></svg></span></li>
+      <li class="rv" style="--k:2"><span>Scroll<svg viewBox="0 0 300 40" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path pathLength="1" d="M1 24 C 100 16, 180 28, 299 20"/></svg></span></li>
+      <li class="rv" style="--k:3"><span>Distracciones<svg viewBox="0 0 300 40" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path pathLength="1" d="M2 23 C 110 15, 170 29, 298 19"/></svg></span></li>
+    </ul>
+  </section>
+
+  <section id="como" class="how" aria-labelledby="t-como">
+    <h2 id="t-como" class="center rv">Así funciona.</h2>
+    <div class="trail">
+      <svg class="trail-svg" aria-hidden="true" focusable="false"><path class="trail-ink"/><circle class="trail-cap trail-tip" r="2.5"/></svg>
+      <img class="trail-pen" src="/vera/img/boli-m1.png" alt="" aria-hidden="true" width="115" height="899">
+      <article class="tstep">
+        <figure class="rv"><img src="/vera/img/vera-writing.jpg" alt="Mano escribiendo con el bolígrafo Vera en papel cuadriculado" width="1600" height="569" loading="lazy" style="object-position:62% 50%"></figure>
+        <span class="num" aria-hidden="true">1</span>
+        <div class="ttext rv">
+          <h3>Escribe como siempre.</h3>
+          <p>Escribe con nuestro bolígrafo en una libreta especial. La cámara de la punta lee lo que escribes en tiempo real.</p>
+        </div>
+      </article>
+      <article class="tstep flip">
+        <figure class="rv"><img src="/vera/img/recog-language.jpg" alt="Alumno explicando en voz alta mientras toma apuntes" width="1800" height="1350" loading="lazy" style="object-position:55% 45%"></figure>
+        <span class="num" aria-hidden="true">2</span>
+        <div class="ttext rv">
+          <h3>Vera lee y escucha.</h3>
+          <p>La cámara le dice a Vera qué estás escribiendo. También puedes hablarle para preguntarle algo.</p>
+        </div>
+      </article>
+      <article class="tstep">
+        <figure class="rv"><img src="/vera/img/recog-math.jpg" alt="Ecuación escrita a mano con el bolígrafo Vera" width="711" height="762" loading="lazy" style="object-position:50% 62%"></figure>
+        <span class="num" aria-hidden="true">3</span>
+        <div class="ttext rv">
+          <h3>Vera te ayuda a pensar.</h3>
+          <p>Vera no te da la respuesta: te pregunta y te guía paso a paso para que pienses por ti mismo.</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="fill" aria-labelledby="t-fill">
+    <div class="fill-pin">
+      <h2 id="t-fill" class="fill-text">Nadie aprende copiando una respuesta. Se aprende cuando llegas a ella <em>por ti mismo</em>, con alguien al lado que pregunta lo justo para que no te rindas.</h2>
+    </div>
+  </section>
+
+  <section class="reads" aria-labelledby="t-reads">
+    <h2 id="t-reads" class="center rv">Entiende cualquier letra.<span class="also">También <span class="hand">jeroglíficos.</span></span></h2>
+    <p class="center sub rv">Vera está entrenada con miles de páginas de cuadernos reales, por lo que entiende cualquier letra, símbolo o esquema.</p>
+    <div class="trio">
+      <figure class="rv"><img src="/vera/img/recog-math.jpg" alt="Fórmula manuscrita" width="711" height="762" loading="lazy"><figcaption><b>Fórmulas.</b> Ecuaciones, integrales y química.</figcaption></figure>
+      <figure class="rv"><img src="/vera/img/recog-diagrams.jpg" alt="Esquema dibujado a mano" width="1600" height="1056" loading="lazy" style="object-position:40% 50%"><figcaption><b>Esquemas.</b> Flechas, gráficas y tachones.</figcaption></figure>
+      <figure class="rv"><img src="/vera/img/recog-language.jpg" alt="Apuntes escritos a mano" width="1800" height="1350" loading="lazy" style="object-position:62% 50%"><figcaption><b>Texto y voz.</b> Letra, redacciones, castellano y gallego.</figcaption></figure>
+    </div>
+  </section>
+
+  <section id="boli" class="pen-spec" aria-labelledby="t-boli">
+    <div class="spec-text">
+      <h2 id="t-boli" class="rv">Solo un boli.</h2>
+      <p class="rv">Vera funciona con el Neo Smartpen M1+: pesa y escribe como un bolígrafo, porque lo es. Abre la aplicación de Vera, quítale la tapa al boli y empieza a estudiar.</p>
+    </div>
+    <figure class="rv"><img src="/vera/img/boli-negro.jpg" alt="Neo smartpen M1+ negro con su capuchón al lado" width="1000" height="600" loading="lazy"></figure>
+  </section>
+
+  <section class="pen-spec pen-spec-next flip" aria-labelledby="t-libreta">
+    <div class="spec-text">
+      <h2 id="t-libreta" class="rv">Una libreta particular.</h2>
+      <p class="rv">Cada página lleva un patrón de micropuntos, casi invisible, que le dice a Vera dónde cae cada trazo. Por lo demás es una libreta normal: se escribe, se tacha y se guarda en la mochila.</p>
+      <p class="print rv">Si quieres, puedes imprimirla tú mismo.</p>
+    </div>
+    <figure class="rv">
+      <div class="ph"><img src="/vera/img/libreta-neo.jpg" alt="Mano escribiendo con el smartpen en una libreta de rayas con micropuntos" width="1600" height="961" loading="lazy"><span aria-hidden="true">PLACEHOLDER</span></div>
+      <figcaption class="credit">Foto: Dominary, <a href="https://commons.wikimedia.org/wiki/File:Neo_smartpen_capture_what_is_written_on_paper.jpg">Wikimedia Commons</a>, CC BY-SA 4.0</figcaption>
+    </figure>
+  </section>
+
+  <section class="who" aria-labelledby="t-who">
+    <h2 id="t-who" class="center rv">La herramienta perfecta para estudiantes que quieren aprender <span class="mark">de verdad<svg viewBox="0 0 300 100" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path d="M2 14 C 80 8, 190 13, 298 6 L 297 90 C 210 96, 90 89, 3 95 Z"/></svg></span>.</h2>
+    <div class="who-cols">
+      <div class="rv"><h3>Nunca te da la respuesta</h3><p>Vera te guía paso a paso y te hace preguntas, pero eres tú el que llega a la solución. Lo que aprendes así es imposible de olvidar en el examen.</p></div>
+      <div class="rv"><h3>Cero pantallas</h3><p>Estudias con papel y boli. Vera te habla y te escucha, pero no necesita una pantalla para lograr que aprendas.</p></div>
+      <div class="rv"><h3>Disponible 24/7</h3><p>Los profesores particulares no pueden ayudarte la noche antes del examen. Vera sí.</p></div>
+    </div>
+  </section>
+
+  <section id="dudas" class="faq" aria-labelledby="t-dudas">
+    <h2 id="t-dudas" class="center rv">Preguntas frecuentes.</h2>
+    <div class="acc rv">
+      <details>
+        <summary>¿Necesita conexión a internet?</summary>
+        <p>Sí. Basta con una conexión wifi básica o con el punto de acceso de un móvil. El procesamiento se realiza en nuestros servidores, por lo que el alumno no necesita consultar ninguna pantalla.</p>
+      </details>
+      <details>
+        <summary>¿Funciona con cualquier papel?</summary>
+        <p>No. Vera utiliza un papel especial con micrograbados que permiten identificar con precisión dónde escribe el alumno. Es económico y está incluido en la suscripción.</p>
+      </details>
+      <details>
+        <summary>¿Qué ocurre con los datos del alumno?</summary>
+        <p>Los ejercicios y las conversaciones quedan vinculados a la cuenta del centro o del tutor. Cumplimos con el RGPD y la LOPDGDD. Además, los datos de los alumnos nunca se utilizan para entrenar modelos de inteligencia artificial de uso general.</p>
+      </details>
+      <details>
+        <summary>¿Vera le da la respuesta al alumno cuando se atasca?</summary>
+        <p>No. Vera no resuelve los ejercicios por el alumno. Cuando detecta una dificultad, adapta la pregunta y ofrece orientación para ayudarle a avanzar por sí mismo, sin revelar la solución.</p>
+      </details>
+      <details>
+        <summary>¿Hace falta un ordenador?</summary>
+        <p>No necesariamente. El bolígrafo se conecta a la aplicación de Vera, disponible tanto en ordenadores como en móviles. El alumno puede trabajar sin mirar ninguna pantalla: basta con dejar el dispositivo boca abajo o utilizar unos auriculares para escuchar las indicaciones mientras escribe.</p>
+      </details>
+      <details>
+        <summary>¿Cuándo estará disponible?</summary>
+        <p>A lo largo de 2026 comenzaremos a distribuir las primeras unidades para programas piloto. Las plazas se asignarán por orden de inscripción, con prioridad para academias y centros educativos. Los envíos estarán disponibles en toda España, con entrega en aproximadamente una semana.</p>
+      </details>
+    </div>
+  </section>
+
+  <section id="lista" class="cta" aria-labelledby="t-lista">
+    <div class="cta-pen rv" aria-hidden="true">
+      <div class="pen-3d" data-pen3d data-tilt="-24" data-fill="0.66" data-intro="0" data-lazy></div>
+      <img class="pen-small" src="/vera/img/boli-m1.png" alt="" width="115" height="899" loading="lazy">
+    </div>
+    <h2 id="t-lista" class="rv">Sé de los primeros en probarlo.</h2>
+    <p class="rv">Te escribiremos cuando haya unidades. Sin compromiso.</p>
+    <form class="wait rv" action="mailto:info@weshearn.com" method="get">
+      <label><span class="sr">Nombre</span><input name="nombre" placeholder="Nombre" autocomplete="name" required></label>
+      <label><span class="sr">Correo</span><input name="correo" type="email" placeholder="tu@correo.com" autocomplete="email" required></label>
+      <button class="btn" type="submit">Apuntarme</button>
+      <label class="check"><input type="checkbox" required> <span>Acepto que Shearn, S.L. guarde mi nombre y correo para avisarme cuando Vera esté disponible.</span></label>
+    </form>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <span class="wordmark">Vera</span>
+  <p>Un producto de Shearn, S.L. · <a href="mailto:info@weshearn.com">info@weshearn.com</a></p>
+  <p><a href="https://weshearn.com/privacidad">Privacidad</a> · <a href="https://weshearn.com/aviso-legal">Aviso legal</a> · © 2026</p>
+</footer>
+
+<script src="/vera/main.js" defer></script>
+<script type="module" src="/vera/pen3d.js"></script>
+</body>
+</html>

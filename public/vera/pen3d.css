@@ -1,0 +1,12 @@
+/* Neo M1+ in 3D. Sits where img.pen sits (a bit taller, so the pen can move
+   without being clipped) and replaces it once WebGL has drawn a frame. */
+.pen-3d {
+  position: absolute; left: 50%; top: -10%; height: 120%;
+  width: clamp(280px, 36vw, 460px);
+  transform: translateX(-50%);
+  pointer-events: none; user-select: none; -webkit-user-select: none;
+  opacity: 0; transition: opacity .8s ease;
+}
+.pen-3d.has-3d { opacity: 1; }
+.pen-3d ~ .pen { transition: opacity .8s ease; }
+.pen-3d.has-3d ~ .pen { opacity: 0 !important; pointer-events: none; }
