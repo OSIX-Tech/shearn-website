@@ -185,9 +185,6 @@ p { margin: 0; }
 .pen-spec.flip { grid-template-columns: 6fr 5fr; }
 .pen-spec.flip figure { order: -1; }
 .pen-spec .print { margin-top: 20px; color: var(--sage); font-weight: 500; }
-.ph { position: relative; border-radius: var(--r); overflow: hidden; }
-.ph img { filter: brightness(.45); }
-.ph span { position: absolute; inset: 0; display: grid; place-items: center; color: #fff; font: 600 clamp(20px, 2.4vw, 32px)/1 var(--font); letter-spacing: .12em; }
 .pen-spec .credit { margin-top: 10px; font-size: 13px; color: var(--muted); text-align: right; }
 .pen-spec .credit a { text-underline-offset: 2px; }
 
